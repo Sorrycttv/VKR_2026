@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Экран можно прокручивать, если рацион получился длинным. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FAF5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Рекомендованное меню"
+            android:textColor="#1B1C1B"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- Период: 1, 3, 7 или 30 дней. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Период планирования"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/periodSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Разнообразие или приготовление заготовок. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Режим готовки"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/cookingModeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Пользователь может попросить пасту, картофель и т. п. -->
+        <EditText
+            android:id="@+id/desiredIngredientsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Желаемые продукты: паста, картофель"
+            android:inputType="text"
+            android:minHeight="56dp" />
+
+        <CheckBox
+            android:id="@+id/surpriseCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Удивить себя"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/generatePlanButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#28764F"
+            android:text="Сформировать рацион"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <ProgressBar
+            android:id="@+id/planProgressBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
+        <!-- Сюда Kotlin выведет блюда, калории и список покупок. -->
+        <TextView
+            android:id="@+id/planResultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#27332B"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/resetPlanButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Сбросить сохранённый план"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

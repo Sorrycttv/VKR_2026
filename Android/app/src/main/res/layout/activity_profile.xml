@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Экран можно прокручивать на небольшом телефоне. -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FAF5"
+    android:fillViewport="true">
+
+    <!-- Основной вертикальный контейнер формы. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- Название экрана. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Параметры рациона"
+            android:textColor="#1B1C1B"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- Информационное предупреждение. -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Рекомендация носит информационный характер и не заменяет консультацию врача."
+            android:textColor="#566159"
+            android:textSize="14sp" />
+
+        <!-- Подпись списка выбора пола. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Пол"
+            android:textColor="#1B1C1B"
+            android:textSize="15sp" />
+
+        <!-- Список вариантов пола заполним в Kotlin. -->
+        <Spinner
+            android:id="@+id/sexSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Возраст пользователя. -->
+        <EditText
+            android:id="@+id/ageInput"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Возраст, лет"
+            android:inputType="number" />
+
+        <!-- Рост пользователя. -->
+        <EditText
+            android:id="@+id/heightInput"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Рост, см"
+            android:inputType="numberDecimal" />
+
+        <!-- Вес пользователя. -->
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Вес, кг"
+            android:inputType="numberDecimal" />
+
+        <!-- Подпись списка активности. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Физическая активность"
+            android:textColor="#1B1C1B"
+            android:textSize="15sp" />
+
+        <!-- Уровень активности заполним в Kotlin. -->
+        <Spinner
+            android:id="@+id/activitySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Подпись цели пользователя. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Цель"
+            android:textColor="#1B1C1B"
+            android:textSize="15sp" />
+
+        <!-- Цель питания заполним в Kotlin. -->
+        <Spinner
+            android:id="@+id/goalSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Подпись типа питания. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Тип питания"
+            android:textColor="#1B1C1B"
+            android:textSize="15sp" />
+
+        <!-- Обычное, вегетарианское или веганское питание. -->
+        <Spinner
+            android:id="@+id/dietSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <!-- Аллергены и исключаемые продукты. -->
+        <EditText
+            android:id="@+id/restrictionsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Исключить продукты или аллергены"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minHeight="80dp"
+            android:gravity="top"
+            android:padding="12dp" />
+
+        <!-- Предпочитаемые пользователем продукты. -->
+        <EditText
+            android:id="@+id/preferredFoodsInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Предпочитаемая пища"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minHeight="80dp"
+            android:gravity="top"
+            android:padding="12dp" />
+
+        <!-- Месячный бюджет на питание. -->
+        <EditText
+            android:id="@+id/budgetInput"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Бюджет на месяц, ₽"
+            android:inputType="numberDecimal" />
+
+        <!-- Сохранение параметров на сервере. -->
+        <Button
+            android:id="@+id/saveProfileButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#28764F"
+            android:text="Сохранить профиль"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ScrollView>

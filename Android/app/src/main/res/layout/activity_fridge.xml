@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FAF5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мой холодильник"
+            android:textColor="#1B1C1B"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Укажите каждый продукт с новой строки. Количество можно писать до или после названия."
+            android:textColor="#566159"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/fridgeInput"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="18dp"
+            android:gravity="top|start"
+            android:hint="Куриное филе 500 г&#10;1 кг картофеля&#10;Рис: 300 г"
+            android:inputType="textMultiLine|textCapSentences"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/saveFridgeButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="#28784F"
+            android:text="Сохранить продукты"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/fridgeRecommendationsButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Что можно приготовить"
+            android:textAllCaps="false"
+            android:textColor="#173F2A" />
+
+        <ProgressBar
+            android:id="@+id/fridgeProgress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/fridgeResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#263A2E"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

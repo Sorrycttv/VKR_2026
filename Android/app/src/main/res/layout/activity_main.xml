@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#F5F9F4">
+
+
+    <!-- Название приложения. -->
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="NutriPlan"
+android:textSize="36sp"
+android:textStyle="bold"
+android:textColor="#1D3327" />
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="16dp"
+android:text="Персональное планирование рациона питания"
+android:textSize="18sp"
+android:textColor="#4E6256"
+android:textAlignment="center" />
+
+<Button
+android:id="@+id/startButton"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="40dp"
+android:text="Начать"
+android:textSize="17sp"
+android:textAllCaps="false"
+android:textColor="#FFFFFF"
+android:backgroundTint="#28784F" />
+
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="24dp"
+android:text="Рекомендации не заменяют консультацию специалиста"
+android:textSize="13sp"
+android:textColor="#6A756E"
+android:textAlignment="center" />
+    </LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Главный экран можно прокручивать-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6FAF5"
+    android:fillViewport="true">
+
+    <!-- Контейнер разделов приложения-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- Название приложения-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NutriPlan"
+            android:textColor="#1B1C1B"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- Приветствие пользователя-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Выберите, чем хотите заняться"
+            android:textColor="#566159"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/profileButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Изменить профиль"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:textSize="17sp" />
+
+        <!-- Переход к формированию рациона-->
+        <Button
+            android:id="@+id/planButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="#28764F"
+            android:text="Сформировать рацион"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <!-- Учёт имеющихся продуктов-->
+        <Button
+            android:id="@+id/fridgeButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Мой холодильник"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:textSize="17sp" />
+
+        <!-- Просмотр проверенного каталога-->
+        <Button
+            android:id="@+id/recipesButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Книга блюд"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:textSize="17sp" />
+
+        <!-- Поиск проверенного рецепта по свободному запросу-->
+        <Button
+            android:id="@+id/askRecipeButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="Спросить рецепт"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:textSize="17sp" />
+
+        <!-- Диалог об общем рационе пользователя-->
+        <Button
+            android:id="@+id/coachButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#DDEDE3"
+            android:text="ИИ-коуч"
+            android:textAllCaps="false"
+            android:textColor="#173F2A"
+            android:textSize="17sp" />
+
+        <!-- Граница ответственности приложения-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="Рекомендации имеют информационный характер"
+            android:textColor="#6A756E"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</ScrollView>
