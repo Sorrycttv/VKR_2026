@@ -2,9 +2,6 @@
 
 Здесь находятся маршруты, которыми пользуется Android-клиент: регистрация,
 профиль, холодильник, формирование и сохранение плана, каталог и AI Coach.
-Сложные вычисления намеренно вынесены в ``recommender.py`` и
-``recommendation_scoring.py``: этот файл отвечает за получение данных,
-проверку прав пользователя и формирование ответа API.
 """
 
 import json
@@ -87,7 +84,6 @@ class CoachMessageInput(BaseModel):
 # --- Инициализация данных -------------------------------------------------
 
 def seed_recipes(db: Session):
-    """Insert or refresh the demonstration catalogue without touching users."""
 
     for recipe_data in RECIPE_CATALOG:
         recipe = db.query(Recipe).filter_by(name=recipe_data["name"]).first()
@@ -151,7 +147,6 @@ def login(data: Credentials, db: Session = Depends(get_db)):
 
 @app.get("/api/v1/profile")
 def get_profile(user: User = Depends(current_user), db: Session = Depends(get_db)):
-    """Return the saved profile so the mobile form can be restored."""
 
     profile = db.get(Profile, user.id)
     if profile is None:
@@ -428,7 +423,6 @@ def recipes(
     user: User = Depends(current_user),
     db: Session = Depends(get_db),
 ):
-    """Return compatible recipes, optionally filtered by name or ingredient."""
 
     profile = db.get(Profile, user.id)
     restrictions = normalise_restrictions(profile.restrictions) if profile else set()
@@ -470,7 +464,6 @@ def _is_catalogue_compatible(recipe: Recipe, diet: str, restrictions: set[str]) 
 
 @app.get("/api/v1/recommendations/basic")
 def basic_recommendations(user: User = Depends(current_user)):
-    """Short non-medical tips shown next to the catalogue."""
 
     return {"recommendations": [
         "Сохраняйте регулярный режим питания и выбирайте удобное число приёмов пищи.",
@@ -538,7 +531,6 @@ def _compact_plan_context(payload: dict) -> dict:
 
 
 def _deterministic_plan_explanation(payload: dict, profile: Profile | None) -> str:
-    """Useful explanation that remains available when the language model is offline."""
 
     context = _compact_plan_context(payload)
     days = payload.get("days") or []
@@ -647,7 +639,6 @@ async def coach_chat(
     user: User = Depends(current_user),
     db: Session = Depends(get_db),
 ):
-    """Give practical, non-medical guidance without replacing the recommender."""
 
     guarded_answer = check_user_message(data.message)
     if guarded_answer:
