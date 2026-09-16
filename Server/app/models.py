@@ -52,7 +52,6 @@ class Recipe(Base):
 
 
 class FridgeItem(Base):
-    """A user-maintained inventory used by the shopping and recipe helpers."""
 
     __tablename__ = "fridge_items"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -87,7 +86,6 @@ class MealPlanItem(Base):
 
 
 class SavedPlan(Base):
-    """The exact latest response shown in the mobile client."""
 
     __tablename__ = "saved_plans"
     user_id: Mapped[int] = mapped_column(
